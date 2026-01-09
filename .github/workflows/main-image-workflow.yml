@@ -1,7 +1,6 @@
 name: Docker Compose Build Latest Main Image Tag (Manual Dispatch)
 
-on:
-  workflow_dispatch:
+on: push
 
 jobs:
   build:
