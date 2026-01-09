@@ -67,8 +67,9 @@ bower_components/
 .flooignore
 
 #config file
-librechat.yaml
-librechat.yml
+librechat*.y*ml
+!/librechat.example.yaml
+librechat*.y*ml.b64
 
 # Environment
 .npmrc
