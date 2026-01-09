@@ -1,6 +1,6 @@
 # TicketingHub Chat
 
-TicketingHub's fork of LibreChat. See the `th-deployment` branch.
+TicketingHub's fork of LibreChat. See the [`th-deployment`](https://github.com/danny-avila/LibreChat/compare/main...ticketinghub:LibreChat:th-deployment) branch.
 
 TicketingHub specific notes: [TICKETINGHUB.md](./TICKETINGHUB.md)
 
