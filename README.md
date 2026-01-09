@@ -1,3 +1,9 @@
+# TicketingHub Chat
+
+TicketingHub's fork of LibreChat. See the `th-deployment` branch.
+
+TicketingHub specific notes: [TICKETINGHUB.md](./TICKETINGHUB.md)
+
 <p align="center">
   <a href="https://librechat.ai">
     <img src="client/public/assets/logo.svg" height="256">
