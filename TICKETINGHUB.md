@@ -16,22 +16,29 @@ th-db-c-hive:
     Authorization: "Bearer <token>"
 ```
 
-- Define `modelSpecs` to limit what models are shown
+Tokens are configured in https://dashboard.heroku.com/apps/hosted-postgres-mcp
+
+- Define what models and agents are visible in `modelSpecs`
 
 ```yml
 modelSpecs:
   list:
+    # Default non-agent module
     - name: "gpt-5"
       label: "GPT5"
       group: "openAI"
       preset:
         endpoint: "openAI"
         model: "gpt-5"
+    # Each agent must be defined
+    - name: "data-agent-c-hive"
+      label: "Data Agent: c-hive"
+      preset:
+        endpoint: "agents"
+        agent_id: "<id>" # Found on the UI, in Agent Builder, under the Agent's name 
 ```
 
-Users will see this model as default and can select agents they have access to.
-
-Tokens are configured in https://dashboard.heroku.com/apps/hosted-postgres-mcp
+GPT5 will be default, users need to first select their Data Agent. Each new Agent need to be added here, the config updated and app redeployed.
 
 ## Deployment
 
