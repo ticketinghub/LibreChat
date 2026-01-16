@@ -1,3 +1,38 @@
+## Configuration
+
+- Set `APP_TITLE`, `CUSTOM_FOOTER`, `HELP_AND_FAQ_URL`
+
+`cp librechat.example.yaml librechat.prod.yaml`
+
+- Remove `termsOfService` from config
+- Edit in config: `interface`
+- Define `mcpServers`, e.g.
+```yml
+th-db-c-hive:
+  type: streamable-http
+  url: https://tenant-data-mcp.ticketinghub.com/mcp
+  requiresOAuth: false
+  headers:
+    Authorization: "Bearer <token>"
+```
+
+- Define `modelSpecs` to limit what models are shown
+
+```yml
+modelSpecs:
+  list:
+    - name: "gpt-5"
+      label: "GPT5"
+      group: "openAI"
+      preset:
+        endpoint: "openAI"
+        model: "gpt-5"
+```
+
+Users will see this model as default and can select agents they have access to.
+
+Tokens are configured in https://dashboard.heroku.com/apps/hosted-postgres-mcp
+
 ## Deployment
 
 Deploy to Railway using the template.
@@ -14,13 +49,7 @@ Change LibreChat service start script on Railway:
 sh -lc 'echo "$LIBRECHAT_YAML_B64" | base64 -d > /app/librechat.yaml && exec npm run backend'
 ```
 
-## Config
-
-- Set `APP_TITLE`, `CUSTOM_FOOTER`, `HELP_AND_FAQ_URL`
-- Remove `termsOfService` from config
-- Edit in config: `interface`
-
-## DB access
+### DB access
 
 Add Public Networking and TCP Proxy to the MongoDB service in Railway.
 
@@ -30,7 +59,9 @@ Use connection string via CLI or MCP.
 mongosh "mongodb://user:pass@proxy:port"
 ```
 
-## Agent instructions
+## Usage
+
+### Agent instructions
 
 ```md
 # TicketingHub Data Agent
