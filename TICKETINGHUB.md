@@ -19,3 +19,13 @@ sh -lc 'echo "$LIBRECHAT_YAML_B64" | base64 -d > /app/librechat.yaml && exec npm
 - Set `APP_TITLE`, `CUSTOM_FOOTER`, `HELP_AND_FAQ_URL`
 - Remove `termsOfService` from config
 - Edit in config: `interface`
+
+## DB access
+
+Add Public Networking and TCP Proxy to the MongoDB service in Railway.
+
+Use connection string via CLI or MCP.
+
+```sh
+mongosh "mongodb://user:pass@proxy:port"
+```
